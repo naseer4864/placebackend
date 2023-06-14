@@ -9,10 +9,10 @@ const mongoose = require("mongoose");
 const HttpError = require("./models/htttp-error");
 
 const app = express();
+app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use(cors());
 
 app.use("/uploads/images", express.static(path.join("uploads", "images")));
 
