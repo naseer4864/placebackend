@@ -1,0 +1,8 @@
+{
+    "env": {
+        "DB_USER": "naseer",
+        "DB_PASSWORD": "woodgate",
+        "DB_NAME": "My_Places",
+        "JWT_KEY": "suppersecret_dont_share"
+    }
+}
