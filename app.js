@@ -17,13 +17,16 @@ app.use(cors());
 app.use("/uploads/images", express.static(path.join("uploads", "images")));
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-with, Content-Type, Accept,Authorization"
-  );
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
-  next();
+  app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://myplaces.vercel.app");
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-with, Content-Type, Accept, Authorization"
+    );
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
+    next();
+  });
+  
 });
 
 app.use("/api/users", UserRoutes);
